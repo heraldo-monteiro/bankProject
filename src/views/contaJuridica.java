@@ -38,11 +38,11 @@ public class contaJuridica extends javax.swing.JFrame {
         lblSaldo = new javax.swing.JLabel();
         btnSair = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        lblOla = new javax.swing.JLabel();
         lblNomeUsuario = new javax.swing.JLabel();
-        cbxCliente = new javax.swing.JComboBox<>();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        btnTranferencia = new javax.swing.JButton();
+        btnDeposito = new javax.swing.JButton();
+        btnSaque = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 51, 255));
@@ -59,17 +59,23 @@ public class contaJuridica extends javax.swing.JFrame {
         Logo.setText("JHM Banck");
 
         Conta.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        Conta.setForeground(new java.awt.Color(153, 153, 153));
         Conta.setText("Conta");
 
         Saldo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        Saldo.setForeground(new java.awt.Color(153, 153, 153));
         Saldo.setText("Meu Saldo");
 
+        lblAgencia.setForeground(new java.awt.Color(204, 204, 204));
         lblAgencia.setText("Agencia");
 
+        lblOperacao.setForeground(new java.awt.Color(204, 204, 204));
         lblOperacao.setText("Op");
 
+        lblNumeroConta.setForeground(new java.awt.Color(204, 204, 204));
         lblNumeroConta.setText("Conta");
 
+        lblSaldo.setForeground(new java.awt.Color(204, 204, 204));
         lblSaldo.setText("Saldo Conta");
 
         btnSair.setText("Sair");
@@ -104,7 +110,7 @@ public class contaJuridica extends javax.swing.JFrame {
                 .addGroup(Panel_MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(Panel_MenuLayout.createSequentialGroup()
                         .addComponent(Saldo, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 203, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 139, Short.MAX_VALUE)
                         .addComponent(btnSair)
                         .addGap(31, 31, 31))
                     .addGroup(Panel_MenuLayout.createSequentialGroup()
@@ -136,8 +142,39 @@ public class contaJuridica extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(244, 244, 246));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel1.setText("Ola!");
+        lblOla.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblOla.setText("Ola!");
+
+        btnTranferencia.setText("Tranferência");
+        btnTranferencia.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnTranferenciaMouseClicked(evt);
+            }
+        });
+
+        btnDeposito.setText("Depósito");
+        btnDeposito.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnDepositoMouseClicked(evt);
+            }
+        });
+        btnDeposito.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDepositoActionPerformed(evt);
+            }
+        });
+
+        btnSaque.setText("Saque");
+        btnSaque.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnSaqueMouseClicked(evt);
+            }
+        });
+        btnSaque.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSaqueActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -146,48 +183,42 @@ public class contaJuridica extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblNomeUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(lblOla, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(lblNomeUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnSaque)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnDeposito)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnTranferencia)))
+                .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(lblOla)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblNomeUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblNomeUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnTranferencia)
+                            .addComponent(btnDeposito)
+                            .addComponent(btnSaque))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
-
-        cbxCliente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione" }));
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Panel_Menu, javax.swing.GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(cbxCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 823, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(Panel_Menu, javax.swing.GroupLayout.DEFAULT_SIZE, 936, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -195,22 +226,18 @@ public class contaJuridica extends javax.swing.JFrame {
                 .addComponent(Panel_Menu, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(cbxCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 225, Short.MAX_VALUE))
+                .addGap(0, 441, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 936, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 672, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 630, Short.MAX_VALUE)
         );
 
         pack();
@@ -227,6 +254,47 @@ public class contaJuridica extends javax.swing.JFrame {
        
     }//GEN-LAST:event_btnSairMouseClicked
 
+    private void btnDepositoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDepositoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnDepositoActionPerformed
+
+    private void btnSaqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaqueActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSaqueActionPerformed
+
+    private void btnSaqueMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSaqueMouseClicked
+           try {
+            saqueBancario saque = new saqueBancario();
+            saque.setVisible(true);            
+        } catch (Exception erro) {
+            System.out.println("Não foi possivel efetuar o Saque! \ntente novamente mais tarde! ");
+        }   
+
+    }//GEN-LAST:event_btnSaqueMouseClicked
+
+    private void btnDepositoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDepositoMouseClicked
+        try {
+            depositoBancario deposito = new depositoBancario();
+            deposito.setVisible(true);            
+        } catch (Exception erro) {
+            System.out.println("Não foi possivel efetuar o Saque! \ntente novamente mais tarde! ");
+        }
+        
+    }//GEN-LAST:event_btnDepositoMouseClicked
+
+    private void btnTranferenciaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTranferenciaMouseClicked
+        try {
+            transferenciaBancaria transferencia = new transferenciaBancaria();
+            transferencia.setVisible(true);
+        } catch (Exception erro) {
+            System.out.println("Não foi possivel efetuar a Tranferencia! \ntente novamente mais tarde! ");
+        }
+        
+        
+        
+    }//GEN-LAST:event_btnTranferenciaMouseClicked
+
+    
     public static void main(String args[]) {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -245,16 +313,16 @@ public class contaJuridica extends javax.swing.JFrame {
     private javax.swing.JLabel Logo;
     private javax.swing.JPanel Panel_Menu;
     private javax.swing.JLabel Saldo;
+    private javax.swing.JButton btnDeposito;
     private javax.swing.JButton btnSair;
-    private javax.swing.JComboBox<String> cbxCliente;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton btnSaque;
+    private javax.swing.JButton btnTranferencia;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel lblAgencia;
     private javax.swing.JLabel lblNomeUsuario;
     private javax.swing.JLabel lblNumeroConta;
+    private javax.swing.JLabel lblOla;
     private javax.swing.JLabel lblOperacao;
     private javax.swing.JLabel lblSaldo;
     // End of variables declaration//GEN-END:variables

@@ -464,10 +464,10 @@ public class cadastroPessoaFisica extends javax.swing.JFrame {
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         try {
-            Login ligin = new Login();  
-            ligin.setVisible(true);  
+            Login login = new Login();  
+            login.setVisible(true);  
             dispose();  
-        } catch (Exception e) {
+        } catch (Exception erro) {
         }
     }//GEN-LAST:event_btnCancelarActionPerformed
 

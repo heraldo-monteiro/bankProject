@@ -497,7 +497,7 @@ public class cadastroPessoaJuridica extends javax.swing.JFrame {
             abriConta();  
             Login ligin = new Login();  
             ligin.setVisible(true);                
-            dispose();  
+            dispose();
         } catch (Exception e) {
         }
     }//GEN-LAST:event_btnCadastrarActionPerformed
@@ -531,7 +531,12 @@ public class cadastroPessoaJuridica extends javax.swing.JFrame {
     }//GEN-LAST:event_txtAgenciaActionPerformed
 
     private void btnCancelarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCancelarMouseClicked
-  
+        try {
+            Login login = new Login();
+            login.setVisible(true);
+            dispose();
+        } catch (Exception erro) {
+        }
         
     }//GEN-LAST:event_btnCancelarMouseClicked
 
